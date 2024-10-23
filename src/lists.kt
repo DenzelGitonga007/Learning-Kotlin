@@ -3,8 +3,8 @@ fun main() {
     val constantList = listOf("Python", "Kotlin", "Flutter")
     val changableList = mutableListOf("Denzel", "Gitonga", "Catherine")
 
-    print(constantList)
+    print(constantList) // will not print on next line
     print(" ")
-    println(changableList)
+    println(changableList) // will print on next line
 
 }
