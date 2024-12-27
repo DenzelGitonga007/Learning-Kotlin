@@ -4,4 +4,7 @@ fun main() {
     x = 50
     println(x)
 
+//    Constant variable
+    val pi = 3.14
+    println(pi)
 }
