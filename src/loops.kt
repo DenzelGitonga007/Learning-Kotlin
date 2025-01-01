@@ -30,6 +30,12 @@ fun main() {
     while (counter<=25)
 
 //    For loop
+    for (num in 5..10) {
+        println(num)
+    }
 
+    for (letters in 'a'..'z') {
+        println("Letter $letters")
+    }
 
 }
