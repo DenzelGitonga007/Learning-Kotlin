@@ -8,7 +8,7 @@ fun main() {
 
 //    Get the user input, two numbers
     var reader = Scanner(System.`in`)
-    println("...To perform a calculation...")
+    println("...To perform calculations...")
     println("Enter the first number: ")
     var num1 = reader.nextInt() // assign the first input to the the reader
 
