@@ -38,4 +38,30 @@ fun main() {
         println("Letter $letters")
     }
 
+//    Break
+    var number=1
+
+    while (number<=6){
+        println(number)
+        number++
+
+        if (number==4){
+            break // you should stop: continue means to skip
+        }
+    }
+
+//    Continue
+
+    var counter2=5
+
+    while (counter2<=10){
+        if (counter2==8){
+            counter2++
+            continue
+        }
+        println(counter2)
+        counter2++
+    }
+
+
 }
