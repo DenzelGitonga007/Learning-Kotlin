@@ -1,4 +1,3 @@
-import java.util.*
 fun main() {
     //Predefined functions
     println("Hello Glory")
@@ -14,9 +13,9 @@ fun main() {
 
     myFun()
     add()
-    details("", 31)
-    details("", 18)
-    details("", 17)
+    details("Glory", 31)
+    details("Dennis", 18)
+    details("Sheila", 17)
 
 
 }
@@ -33,10 +32,6 @@ fun add(){
     println(number1+number2)
 }
 
-fun details(my_name:String, age:Int){
-    var reader = Scanner(System.`in`)
-    println("Enter name : ")
-    var my_name = readln()
-
-    println("$my_name is $age years old")
+fun details(name:String, age:Int){
+    println("$name is $age years old")
 }
