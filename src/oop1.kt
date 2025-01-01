@@ -14,8 +14,6 @@ class Person{
     }
 }
 
-
-
 fun main(){
 //    Creating an object
     var teacher=Person() // create a variable and specify which class is takes
