@@ -23,7 +23,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
 
 
         if (email.isBlank() || password.isBlank() ||confpassword.isBlank()){
-            Toast.makeText(context,"Please email and password cannot be blank", Toast.LENGTH_LONG).show()
+            Toast.makeText(context,"All fields are required", Toast.LENGTH_LONG).show()
         }else if (password != confpassword){
             Toast.makeText(context,"Password do not match", Toast.LENGTH_LONG).show()
         }else{
@@ -55,7 +55,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
     fun login(email: String, password: String){
 
         if (email.isBlank() || password.isBlank()){
-            Toast.makeText(context,"Please email and password cannot be blank", Toast.LENGTH_LONG).show()
+            Toast.makeText(context,"All fields are required", Toast.LENGTH_LONG).show()
         }
         else {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
