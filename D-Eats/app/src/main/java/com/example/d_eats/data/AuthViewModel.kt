@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.d_eats.models.User
 import com.example.d_eats.navigation.ROUTE_HOME
+import com.example.d_eats.navigation.VIEW_MENU
 import com.example.d_eats.navigation.ROUTE_LOGIN
 import com.example.d_eats.navigation.ROUTE_REGISTER
 import com.google.firebase.auth.FirebaseAuth
@@ -62,6 +63,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
                 if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
                     navController.navigate(ROUTE_HOME)
+//                    navController.navigate(VIEW_MENU)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }

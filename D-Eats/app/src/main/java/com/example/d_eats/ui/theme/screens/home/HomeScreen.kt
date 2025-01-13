@@ -24,80 +24,77 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.d_eats.R
+import com.example.d_eats.navigation.ADD_MENU
 import com.example.d_eats.ui.theme.LightCyan
 
-// Suppress warnings about unused padding for Scaffold content
+// Suppress warning for unused scaffold padding
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController) {
-    // Scaffold is a structure for the screen's layout
-    // It gives you a top bar, a bottom bar, floating buttons, etc.
+    // Scaffold provides a structure for the screen with top bar, bottom bar, floating buttons, etc.
     Scaffold(
-        // Top bar at the top of the screen
+        // Top bar of the screen
         topBar = {
             TopAppBar(
-                // The title of the app
-
                 title = {
+                    // Title of the app
                     Text(
-                        "D-Eats", // App title
+                        text = "D-Eats",
                         fontSize = 40.sp, // Font size in sp (scale-independent pixels)
-                        fontFamily = FontFamily.Cursive, // A fancy font style
-                        fontWeight = FontWeight.ExtraBold // Bold and extra heavy text
+                        fontFamily = FontFamily.Cursive, // Cursive font style
+                        fontWeight = FontWeight.ExtraBold // Extra bold text
                     )
                 },
-
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = LightCyan, // Background color of the TopAppBar
-                    titleContentColor = Color.White // Color of the title text
+                    titleContentColor = Color.White // Title text color
                 )
             )
         },
-        // Floating button at the bottom-right of the screen
+        // Floating action button at the bottom-right of the screen
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Logic for navigating to Add Meal Screen */ },
+                onClick = {
+                    navController.navigate(ADD_MENU)
+                },
                 containerColor = LightCyan // Button background color
             ) {
-                // Add (+) icon inside the floating button
+                // Add icon inside the floating action button
                 Icon(Icons.Default.Add, contentDescription = "Add Meal", tint = Color.White)
             }
         },
         // Main content area
         content = { padding ->
-            // Column arranges items vertically, one after the other
             Column(
                 modifier = Modifier
                     .fillMaxSize() // Take up the entire screen
-                    .padding(padding), // Add padding to avoid overlap with other parts
-                horizontalAlignment = Alignment.CenterHorizontally // Center everything horizontally
+                    .padding(padding), // Padding to avoid overlap with other components
+                horizontalAlignment = Alignment.CenterHorizontally // Center content horizontally
             ) {
                 // Welcome message
                 Text(
-                    "Welcome to D-Eats!", // Text to display
+                    text = "Welcome to D-Eats!",
                     fontSize = 18.sp, // Font size
-                    modifier = Modifier.padding(top = 16.dp), // Padding from the top
+                    modifier = Modifier.padding(top = 16.dp) // Padding from the top
                 )
 
-                Spacer(modifier = Modifier.height(10.dp)) // Empty space between elements
+                Spacer(modifier = Modifier.height(10.dp)) // Spacer for spacing between elements
 
-                // LazyColumn is used for scrollable lists
+                // LazyColumn to display a scrollable list of meal cards
                 LazyColumn(
                     modifier = Modifier
-                        .fillMaxWidth() // Make the list as wide as the screen
+                        .fillMaxWidth() // List takes the full width of the screen
                         .padding(horizontal = 14.dp) // Padding on the sides
                 ) {
                     // Generate a list of 10 meal cards
                     items(10) { index ->
-                        // Show individual meal card
                         MealCard(
-
                             name = "Meal $index", // Meal name
                             description = "Delicious Meal $index", // Meal description
                             price = "$${10 + index}", // Meal price
-                            onEdit = { /* Handle edit logic here */ },
-                            onDelete = { /* Handle delete logic here */ }
+                            onEdit = { /* Handle edit logic */ }, // Edit action
+                            onDelete = { /* Handle delete logic */ } // Delete action
                         )
                     }
                 }
@@ -109,23 +106,20 @@ fun HomeScreen(navController: NavController) {
 // Composable function for each individual meal card
 @Composable
 fun MealCard(name: String, description: String, price: String, onEdit: () -> Unit, onDelete: () -> Unit) {
-    // Card with LightCyan background
+    // Card with a light grey background
     Card(
         modifier = Modifier
-            .fillMaxWidth() // Card takes up the full width of the screen
-            .padding(vertical = 5.dp), // Space between cards
-        colors = CardDefaults.cardColors(
-            containerColor = LightCyan // Background color
-        ),
-        shape = RoundedCornerShape(5.dp), // Rounded corners with 5.dp radius
+            .fillMaxWidth() // Card takes the full width of the screen
+            .padding(vertical = 5.dp), // Padding between cards
+        shape = RoundedCornerShape(5.dp), // Rounded corners with a radius of 5.dp
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp) // Shadow under the card
     ) {
-        // Row arranges items horizontally
+        // Row to arrange items horizontally
         Row(
             modifier = Modifier
-                .fillMaxWidth() // Row takes up the full width of the card
+                .fillMaxWidth() // Row takes the full width of the card
                 .padding(16.dp), // Padding inside the card
-            verticalAlignment = Alignment.CenterVertically // Align items in the center vertically
+            verticalAlignment = Alignment.CenterVertically // Center items vertically
         ) {
             // Placeholder image for the meal
             Image(
@@ -133,20 +127,34 @@ fun MealCard(name: String, description: String, price: String, onEdit: () -> Uni
                 contentDescription = "Meal Image", // Accessibility description
                 modifier = Modifier
                     .size(64.dp) // Image size
-                    .padding(end = 16.dp) // Space between image and text
-                    .background(Color.White, shape = RoundedCornerShape(8.dp)) // Rounded corners for image
+                    .padding(end = 16.dp) // Padding between image and text
+                    .background(Color.White, shape = RoundedCornerShape(8.dp)) // Background with rounded corners
             )
             // Column for meal details
             Column(
-                modifier = Modifier.weight(1f) // Take up all available space in the row
+                modifier = Modifier.weight(1f) // Take up remaining space
             ) {
-                Text(name, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = Color.White) // Meal name
-                Text(description, fontSize = 14.sp, maxLines = 1, color = Color.White) // Meal description (1 line only)
-                Text(price, fontWeight = FontWeight.Bold, color = Color.White) // Meal price
+                Text(
+                    text = name,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                    color = Color.Black
+                ) // Meal name
+                Text(
+                    text = description,
+                    fontSize = 14.sp,
+                    maxLines = 1,
+                    color = Color.Black
+                ) // Meal description (1 line)
+                Text(
+                    text = price,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
+                ) // Meal price
             }
             // Edit button
             IconButton(onClick = onEdit) {
-                Icon(Icons.Default.Edit, contentDescription = "Edit Meal", tint = Color.White)
+                Icon(Icons.Default.Edit, contentDescription = "Edit Meal", tint = Color.Black)
             }
             // Delete button
             IconButton(onClick = onDelete) {
@@ -156,10 +164,9 @@ fun MealCard(name: String, description: String, price: String, onEdit: () -> Uni
     }
 }
 
-// Preview of the HomeScreen for testing in Android Studio
+// Preview function to test the HomeScreen composable
 @Composable
 @Preview(showBackground = true)
 fun HomeScreenPreview() {
-    // Creates a fake NavController for preview
     HomeScreen(navController = rememberNavController())
 }

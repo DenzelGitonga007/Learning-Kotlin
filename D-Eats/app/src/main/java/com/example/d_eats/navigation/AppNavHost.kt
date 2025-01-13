@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.d_eats.ui.theme.screens.Menu.AddMenuScreen
+import com.example.d_eats.ui.theme.screens.Menu.ViewMenuScreen
 import com.example.d_eats.ui.theme.screens.about.AboutScreen
 import com.example.d_eats.ui.theme.screens.home.HomeScreen
 import com.example.d_eats.ui.theme.screens.login.LoginScreen
@@ -35,6 +37,12 @@ fun AppNavHost(
         }
         composable(ROUTE_LOGIN) {
             LoginScreen(navController = navController)
+        }
+        composable(ADD_MENU){
+            AddMenuScreen(navController = navController)
+        }
+        composable(VIEW_MENU){
+            ViewMenuScreen(navController = navController)
         }
 
 
