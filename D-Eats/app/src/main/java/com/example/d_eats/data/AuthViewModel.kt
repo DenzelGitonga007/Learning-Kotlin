@@ -62,8 +62,8 @@ class AuthViewModel(var navController: NavController, var context: Context){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(ROUTE_HOME)
-//                    navController.navigate(VIEW_MENU)
+//                    navController.navigate(ROUTE_HOME)
+                    navController.navigate(VIEW_MENU)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }

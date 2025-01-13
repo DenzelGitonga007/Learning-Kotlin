@@ -87,52 +87,7 @@ fun AddMenuScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(30.dp))
 
-            // home icon
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp, vertical = 6.dp),
-                verticalAlignment = Alignment.CenterVertically,
-            ){
-                Icon(
-                    imageVector = Icons.Default.Home,
-                    contentDescription = null,
-                    modifier = Modifier.clickable { navController.navigate(ROUTE_HOME) },
-                    tint = Color.Black
-                )
-                Spacer(modifier = Modifier.width(5.dp))
-                Text(
-                    text = "Home",
-                    modifier = Modifier.clickable { navController.navigate(ROUTE_HOME) },
-                    fontWeight = FontWeight.SemiBold,
-                    color = Color.Black
-                )
-                Row (
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.End,
-                    verticalAlignment = Alignment.CenterVertically
-                ){
-                    Icon(
-                        imageVector = Icons.Default.Info,
-                        contentDescription = null,
-                        modifier = Modifier.clickable {
-                            navController.navigate(ROUTE_ABOUT)
-                        },
-                        tint = Color.Black
-                    )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = "Help",
-                        color = Color.Black,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier.clickable {
-                            navController.navigate(ROUTE_ABOUT)
-                        }
-                    )
-                }
-            }
-            //end of home icon
+
             //intro row
             Row (
                 modifier = Modifier.fillMaxWidth(),
