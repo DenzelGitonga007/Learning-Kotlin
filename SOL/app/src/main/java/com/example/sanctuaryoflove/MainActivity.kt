@@ -1,5 +1,6 @@
 package com.example.sanctuaryoflove
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,8 +14,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview // For previewing composables in Android Studio
+import com.example.sanctuaryoflove.navigation.AppNavHost
 import com.example.sanctuaryoflove.ui.theme.SanctuaryOfLoveTheme
-import com.example.sanctuaryoflove.ui.theme.welcome.WelcomeScreen
+import com.example.sanctuaryoflove.ui.theme.screens.home.HomeScreen
+
 
 // MainActivity is the entry point of your app
 class MainActivity : ComponentActivity() {
@@ -30,10 +33,13 @@ class MainActivity : ComponentActivity() {
             // Sets the app theme for consistent styling
             SanctuaryOfLoveTheme {
                 // Surface provides a container with background styling
-                Surface(color = MaterialTheme.colorScheme.background) {
-                    // Calls the composable function to display the welcome screen content
-                    WelcomeScreen()
-                }
+//                Surface(color = MaterialTheme.colorScheme.background) {
+//                    // Calls the composable function to display the welcome screen content
+//                    HomeScreen()
+//                }
+
+                // Call the navigation graph
+                AppNavHost()
             }
         }
     }
