@@ -105,6 +105,29 @@ fun HomeScreen(navController: NavController) {
                     Text("Contact Us")
                 }
             }
+
+
+//            Bottom Content
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Bottom
+
+            ) {
+                Text(
+                    text = """
+                        App developed with ❤ by Tech with Denzel
+                        0714082283
+                        denzelgitonga001@gmail.com
+                        
+                        
+                    """.trimIndent(),
+                    fontSize = 14.sp,
+                    color = Color.Gray,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+
         }
     )
 }
