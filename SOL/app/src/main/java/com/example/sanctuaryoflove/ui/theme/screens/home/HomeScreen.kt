@@ -3,8 +3,10 @@ package com.example.sanctuaryoflove.ui.theme.screens.home
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,7 +41,8 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxSize() // Make sure content fills the entire screen
                     .background(Color.White) // Set background color to white
                     .padding(paddingValues) // Add padding from Scaffold
-                    .padding(16.dp),
+                    .padding(16.dp)
+                    .verticalScroll(rememberScrollState()),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
@@ -80,7 +83,9 @@ fun HomeScreen(navController: NavController) {
 
                 // Button for Our Services
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate("services") // go to our services screen
+                    },
                     modifier = Modifier.fillMaxWidth(0.8f),
                     colors = ButtonDefaults.buttonColors(containerColor = Sol_Blue)
                 ) {

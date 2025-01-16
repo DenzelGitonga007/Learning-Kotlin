@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,9 +33,10 @@ fun AboutScreen(navController: NavController) {
                     .fillMaxSize()
                     .background(Color.White)
                     .padding(paddingValues)
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.Start,
-                verticalArrangement = Arrangement.Top
+                    .padding(16.dp)
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.Start, // content to start from the margin
+                verticalArrangement = Arrangement.Top // content to start from the top
             ) {
                 Text(
                     text = "About Us",
@@ -41,7 +44,7 @@ fun AboutScreen(navController: NavController) {
                     fontWeight = FontWeight.Bold,
                     color = Color.Black
                 )
-                Spacer(modifier = Modifier.padding(top = 16.dp))
+                Spacer(modifier = Modifier.padding(top = 16.dp)) // space from the top
                 Text(
                     text = """
                         Sanctuary of Love Worship Centre is a vibrant, spirit-filled church located in Dandora Phase 4, Nairobi. Under the dedicated leadership of Bishop Boniface Wambua and Overseer Purity Mutwiwa, the church has become a beacon of hope and love for the community.

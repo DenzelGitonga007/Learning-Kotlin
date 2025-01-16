@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sanctuaryoflove.ui.theme.screens.about.AboutScreen
 import com.example.sanctuaryoflove.ui.theme.screens.home.HomeScreen
+import com.example.sanctuaryoflove.ui.theme.screens.our_services.ServicesScreen
 
 
 @Composable
@@ -24,13 +25,20 @@ fun AppNavHost(
     ) {
 
 //        Define the screens as by their routes
+//        Home Route
         composable(ROUTE_HOME) {
             HomeScreen(navController = navController)
         }
-
+//        About Route
         composable(ROUTE_ABOUT) {
             AboutScreen(navController = navController)
         }
+
+//        Services Route
+        composable(ROUTE_SERVICES) {
+            ServicesScreen(navController = navController)
+        }
+
 
 
 
