@@ -96,7 +96,9 @@ fun HomeScreen(navController: NavController) {
 
                 // Button for Contact Us
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate("contact") // go to contact
+                    },
                     modifier = Modifier.fillMaxWidth(0.8f),
                     colors = ButtonDefaults.buttonColors(containerColor = Sol_Blue)
                 ) {

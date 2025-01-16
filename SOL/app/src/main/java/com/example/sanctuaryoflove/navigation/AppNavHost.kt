@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sanctuaryoflove.ui.theme.screens.about.AboutScreen
+import com.example.sanctuaryoflove.ui.theme.screens.contact.ContactScreen
 import com.example.sanctuaryoflove.ui.theme.screens.home.HomeScreen
 import com.example.sanctuaryoflove.ui.theme.screens.our_services.ServicesScreen
 
@@ -39,6 +40,10 @@ fun AppNavHost(
             ServicesScreen(navController = navController)
         }
 
+//        Contact Route
+        composable(ROUTE_CONTACT) {
+            ContactScreen(navController = navController)
+        }
 
 
 
