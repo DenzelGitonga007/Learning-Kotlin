@@ -71,7 +71,7 @@ fun AboutScreen(navController: NavController){
 }
 
 @Composable
-@Preview
+@Preview(showBackground = true)
 fun AboutScreenPreview(){
     ALCITheme {
         AboutScreen(navController = rememberNavController())
