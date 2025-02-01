@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.alci.ui.theme.screens.about.AboutScreen
 import com.example.alci.ui.theme.screens.contact.ContactScreen
 import com.example.alci.ui.theme.screens.home.HomeScreen
+import com.example.alci.ui.theme.screens.our_services.ServicesScreen
 
 @Composable
 fun AppNavHost(
@@ -37,6 +38,11 @@ fun AppNavHost(
 //        Contact us screen
         composable(ROUTE_CONTACT) {
             ContactScreen(navController = navController)
+        }
+
+//        Services screen
+        composable(ROUTE_SERVICES) {
+            ServicesScreen(navController = navController)
         }
     }
 

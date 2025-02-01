@@ -35,9 +35,10 @@ fun AboutScreen(navController: NavController){
                 modifier = Modifier
                     .fillMaxSize()
                     .background(Color.White)
+                    .padding(paddingValues)
                     .padding(16.dp)
                     .verticalScroll(rememberScrollState()),
-                horizontalAlignment = Alignment.CenterHorizontally,
+                horizontalAlignment = Alignment.Start,
                 verticalArrangement = Arrangement.Top
             ) {
                 Text(
@@ -46,7 +47,7 @@ fun AboutScreen(navController: NavController){
                     fontWeight = FontWeight.Bold,
                     color = Color.Black
                 )
-                Spacer(modifier = Modifier.padding(top = 24.dp)) // space from the top
+                Spacer(modifier = Modifier.padding(top = 20.dp)) // space from the top
 
                 Text(
                     text = """

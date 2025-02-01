@@ -90,7 +90,9 @@ fun HomeScreen(navController: NavController) {
 
 //                Our services
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate("services")
+                    },
                     modifier = Modifier.fillMaxWidth(0.8f),
                     colors = ButtonDefaults.buttonColors(containerColor = Alci_Blue)
                 ) {

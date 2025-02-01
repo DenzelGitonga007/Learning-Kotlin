@@ -42,14 +42,15 @@ fun ContactScreen(navController: NavController){
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp)
                     .background(Color.White)
+                    .padding(paddingValues)
+                    .padding(16.dp)
                     .verticalScroll(rememberScrollState()),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Top
             ) {
 
-                Spacer(modifier = Modifier.height(80.dp))
+
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically
