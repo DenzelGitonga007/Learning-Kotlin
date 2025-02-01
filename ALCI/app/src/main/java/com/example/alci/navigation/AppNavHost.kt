@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.alci.ui.theme.screens.about.AboutScreen
 import com.example.alci.ui.theme.screens.home.HomeScreen
 
 @Composable
@@ -25,6 +26,11 @@ fun AppNavHost(
 //        HomeScreen
         composable(ROUTE_HOME) {
             HomeScreen(navController = navController)
+        }
+
+//        About screen
+        composable(ROUTE_ABOUT) {
+            AboutScreen(navController = navController)
         }
     }
 

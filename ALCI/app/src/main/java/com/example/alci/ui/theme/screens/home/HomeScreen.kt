@@ -77,7 +77,9 @@ fun HomeScreen(navController: NavController) {
 
 //                About us button
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate("about")
+                    },
                     modifier = Modifier.fillMaxWidth(0.8f),
                     colors = ButtonDefaults.buttonColors(containerColor = Alci_Blue)
                 ) {
